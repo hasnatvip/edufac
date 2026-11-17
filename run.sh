@@ -21,7 +21,7 @@ elif [ -f "$SCRIPT_DIR/.venv/bin/activate" ]; then
 elif [ -f "$SCRIPT_DIR/venv/bin/activate" ]; then
     echo "Activating virtual environment: $SCRIPT_DIR/venv"
     source "$SCRIPT_DIR/venv/bin/activate"
-elif [ -f "$HOME/facefusion-env/bin/activate" ]; then
+elif [ -f "$HOME/facefusion-env/bin/activate" ] && "$HOME/facefusion-env/bin/python" -c "import cv2" 2>/dev/null; then
     echo "Activating virtual environment: $HOME/facefusion-env"
     source "$HOME/facefusion-env/bin/activate"
 else
